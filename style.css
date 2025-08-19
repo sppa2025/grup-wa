@@ -9,7 +9,11 @@
 body {
   background-color: #e1e2dd;
   text-align: center;
-  font-family: "Gill Sans", sans-serif;
+  font-family: "Gluten", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }
 
 .container {
@@ -28,7 +32,7 @@ body {
 
 .user-name {
   font-size: 30px;
-  font-family: "Chela One", system-ui;
+  font-family: "Chela One", system-ui !important;
   font-weight: 400;
   font-style: normal;
   margin: 10px 0;
