@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Gluten:wght@100..900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,8 +27,10 @@ body {
 }
 
 .user-name {
-  font-family: "Brush Script MT", cursive;
   font-size: 30px;
+  font-family: "Chela One", system-ui;
+  font-weight: 400;
+  font-style: normal;
   margin: 10px 0;
 }
 
