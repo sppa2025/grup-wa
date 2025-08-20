@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Gluten:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
 
 * {
   box-sizing: border-box;
@@ -205,4 +206,41 @@ body {
 }
 .star-field .layer:nth-child(3) {
     animation: sf-fly-by-3 5s linear infinite;
+}
+
+.note {
+  color: #333;
+  position: relative;
+  height: auto;
+  text-align: left; /* pastikan hanya left */
+  margin: 0 auto;
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+  z-index: 1;
+  border: none;
+  border-bottom-right-radius: 50% 15%;
+  background: linear-gradient(165deg, transparent 40%, rgba(0,0,0,0.15) 80%, rgba(255,255,255,0.15) 90%,rgba(255,255,255,0.15) 100%);
+  background-color: #ffffa5;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to bottom right, rgba(255,255,255,0.75) 30%, rgba(0,0,0,0.25) 60%, transparent 80%);
+  border-image-slice: 1;
+  font-size: 1.3em; /* lebih besar */
+  padding: 24px;    /* tambahkan padding agar list masuk ke dalam note */
+}
+a{
+  text-decoration: none;
+}
+
+/* Optional: rapikan list di dalam note */
+.note ol, .note ul {
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+.misc {
+  margin:50px auto;
+  float:0;
+  position:relative;
 }
