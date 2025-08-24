@@ -27,8 +27,10 @@
       <hr>
       <br><br>
       <p>Berikut kami informasikan enrollment key untuk Bimtek SPPA:</p>
-        <br>
-        <h2>2025SPPA9</h2>
+      <br>
+      <h2>2025SPPA9</h2>
+      <!-- Link absen otomatis -->
+      <div id="absen-link"></div>
       <!--
       <ol>
         <li>
@@ -73,7 +75,7 @@
     <br>
     <br>
     <p>
-      <a style="color:chocolate" href="https://drive.google.com/file/d/1BxKDblVegPJTf5-4KBDxP1z3OraI4W41/view?usp=sharing">virtual background untuk zoom</a>
+      <a style="color:chocolate" href="https://drive.google.com/file/d/1lhBgLPTWXQGmouYdne0hoHOkViA49n-f/view?usp=sharing">virtual background untuk zoom (tanggal 25 & 26 Agustus 2025)</a>
     </p>
     <br><br><br><br>
     <p class="footer-text" style="color: wheat;">
@@ -88,3 +90,47 @@
   </div>
 </body>
 </html>
+<script>
+// filepath: c:\Users\User\Downloads\Badilum\Pengembangan\grup-wa\index.html
+// Tampilkan link absen sesuai hari dan jam
+(function() {
+  // WIB = UTC+7
+  function getWIBDate() {
+    const now = new Date();
+    // Konversi ke WIB
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    return new Date(utc + (7 * 60 * 60 * 1000));
+  }
+
+  const wibNow = getWIBDate();
+  const year = wibNow.getFullYear();
+  const month = wibNow.getMonth() + 1; // 0-based
+  const date = wibNow.getDate();
+  const day = wibNow.getDay(); // 0 = Minggu, 1 = Senin, 2 = Selasa
+  const hour = wibNow.getHours();
+
+  let link = "";
+  let label = "";
+
+  // Untuk testing: aktifkan juga di tanggal 24 Agustus 2025 jam >= 8 WIB
+  if (year === 2025 && month === 8 && date === 24 && hour >= 8) {
+    link = "#";
+    label = "Presensi Akan Muncul disini";
+  }
+  // Senin, 25 Agustus 2025 jam >= 8 WIB
+  else if (year === 2025 && month === 8 && date === 25 && day === 1 && hour >= 8) {
+    link = "https://forms.gle/hfYT8DcQeCx6SXgB9";
+    label = "Presensi Hari Senin (25 Agustus 2025)";
+  }
+  // Selasa, 26 Agustus 2025 jam >= 8 WIB
+  else if (year === 2025 && month === 8 && date === 26 && day === 2 && hour >= 8) {
+    link = "https://forms.gle/eYtssMj8kTEkgnZV7";
+    label = "Presensi Hari Selasa (26 Agustus 2025)";
+  }
+
+  if (link) {
+    document.getElementById("absen-link").innerHTML =
+      `<a href="${link}" target="_blank" style="display:inline-block;margin:16px 0;padding:12px 24px;background:#ffe082;color:#333;border-radius:8px;font-weight:bold;text-decoration:none;">${label}</a>`;
+  }
+})();
+</script>
